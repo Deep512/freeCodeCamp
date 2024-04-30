@@ -68,6 +68,7 @@ let alertMessage;
 window.alert = (message) => alertMessage = message; // Override alert and store message
 
 inputEl.value = '';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please input a value');
 ```
@@ -80,6 +81,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'A';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a is a palindrome');
 ```
@@ -92,6 +94,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'eye';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'eye is a palindrome');
 ```
@@ -104,6 +107,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '_eye';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '_eye is a palindrome');
 ```
@@ -116,6 +120,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'race car';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'race car is a palindrome');
 ```
@@ -128,6 +133,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'not a palindrome';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'not a palindrome is not a palindrome');
 ```
@@ -140,6 +146,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'A man, a plan, a canal. Panama';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'a man, a plan, a canal. panama is a palindrome');
 ```
@@ -152,6 +159,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'never odd or even';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'never odd or even is a palindrome');
 ```
@@ -164,6 +172,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'nope';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'nope is not a palindrome');
 ```
@@ -176,6 +185,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'almostomla';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'almostomla is not a palindrome');
 ```
@@ -188,6 +198,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'My age is 0, 0 si ega ym.';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'my age is 0, 0 si ega ym. is a palindrome');
 ```
@@ -200,6 +211,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '1 eye for of 1 eye.';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '1 eye for of 1 eye. is not a palindrome');
 ```
@@ -212,6 +224,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = '0_0 (: /-\ :) 0-0';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), '0_0 (: /-\ :) 0-0 is a palindrome');
 ```
@@ -224,6 +237,7 @@ const checkBtn = document.getElementById('check-btn');
 const resultEl = document.getElementById('result');
 
 inputEl.value = 'five|\_/|four';
+inputEl.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'five|\_/|four is not a palindrome');
 ```
